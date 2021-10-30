@@ -7,15 +7,31 @@
 
 ## Project Overview
 
-Welcome to the Convolutional Neural Networks (CNN) project in the AI Nanodegree! In this project, you will learn how to build a pipeline that can be used within a web or mobile app to process real-world, user-supplied images.  Given an image of a dog, your algorithm will identify an estimate of the canine’s breed.  If supplied an image of a human, the code will identify the resembling dog breed.  
+Welcome to the Convolutional Neural Networks (CNN) project in the Data Science Nanodegree! In this project, we build a pipeline that can be used within a web or mobile app to process real-world, user-supplied images.  Given an image of a dog, your algorithm will identify an estimate of the canine’s breed.  If supplied an image of a human, the code will identify the resembling dog breed.  
+
+A Medium blog about the details of the project cab be found in the following link:
+https://medium.com/@ahmed.lotfy7/classifying-dog-breeds-using-transfer-learning-cc4ae787bf64
 
 ![Sample Output][image1]
 
-Along with exploring state-of-the-art CNN models for classification, you will make important design decisions about the user experience for your app.  Our goal is that by completing this lab, you understand the challenges involved in piecing together a series of models designed to perform various tasks in a data processing pipeline.  Each model has its strengths and weaknesses, and engineering a real-world application often involves solving many problems without a perfect answer.  Your imperfect solution will nonetheless create a fun user experience!
+
+## Project Structure
+```
+├── bottleneckfeature                    # Folder contains the bottleneck features for the transfer learning part
+├── haarcascades                         # OpenCV face detector
+├── images                               # folder contains images used in the notebook, test images, and figures for the results
+├── requirements                         # folder conatains the requirements file to run the code 
+├── saved_models                         # folder contains the best  models used to predict the dog breeds
+├── CODEOWNERS       
+├── dog_app.ipynp                        # a jupyter notebook contains the steps of the projects and the code used 
+├── extract_bottleneck_features.py       # a python script to extract the bottleneck features
+├── LICENCE.txt      
+├── README.md
+```
+
 
 ## Project Instructions
 
-### Instructions
 
 1. Clone the repository and navigate to the downloaded folder.
 ```	
@@ -102,15 +118,16 @@ jupyter notebook dog_app.ipynb
 
 __NOTE:__ While some code has already been implemented to get you started, you will need to implement additional functionality to successfully answer all of the questions included in the notebook. __Unless requested, do not modify code that has already been included.__
 
-## Evaluation
 
-Your project will be reviewed by a Udacity reviewer against the CNN project [rubric](https://review.udacity.com/#!/rubrics/810/view).  Review this rubric thoroughly, and self-evaluate your project before submission.  All criteria found in the rubric must meet specifications for you to pass.
+## Summary of the results
 
-## Project Submission
+In this project, different approaches for the development of an app for the identification of dog breeds were implemented.
+As a starting point, we built a model from scratch using multiple sequential Convolutional layers. The model resulted in a poor test accuracy of 4.5%.
 
-When you are ready to submit your project, collect the following files and compress them into a single archive for upload:
-- The `dog_app.ipynb` file with fully functional code, all code cells executed and displaying output, and all questions answered.
-- An HTML or PDF export of the project notebook with the name `report.html` or `report.pdf`.
-- Any additional images used for the project that were not supplied to you for the project. __Please do not include the project data sets in the `dogImages/` or `lfw/` folders.  Likewise, please do not include the `bottleneck_features/` folder.__
+Secondly, the technique of transfer learning was used to implement a new model based on a pre-trained VGG16 model. The model resulted in a better test accuracy of 48%.
+Finally, the powerful InceptionV3 model was exploited to build a new model with addition of other 3 layers which resulted in a test accuracy around 81%.
 
-Alternatively, your submission could consist of the GitHub link to your repository.
+# Blog Post
+https://medium.com/@ahmed.lotfy7/classifying-dog-breeds-using-transfer-learning-cc4ae787bf64
+
+
